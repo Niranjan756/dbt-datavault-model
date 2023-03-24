@@ -1,2 +1,2 @@
 select * 
-from raw.globalmart.orders; 
+from raw.globalmart.orders
