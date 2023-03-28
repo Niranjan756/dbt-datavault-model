@@ -8,13 +8,15 @@ o.ordersellingprice,
 o.ordercostprice,
 o.ordersellingprice - o.ordercostprice as profit,
 ---from raw_customer 
+c.custid as customerid,
 c.custname,
 c.segment,
 c.country,
 -- from raw_product 
 p.category,
 p.productname,
-p.subcategory
+p.subcategory,
+p.productid 
 from {{ ref('raw_order') }} as o
 left join {{ ref('raw_customer') }} c
 on o.customerid = c.custid 
